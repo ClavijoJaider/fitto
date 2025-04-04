@@ -32,10 +32,11 @@ class HomeFragment : Fragment() {
         //
 
 
-        binding.button.setOnClickListener()
+        binding.btnLogin.setOnClickListener()
         {
-            val nombre = binding.editTextTextPassword2.text.toString()
-            val toast = Toast.makeText(context,"Hello World " + nombre, Toast.LENGTH_SHORT)
+            val gmail = binding.etEmail.text.toString()
+            val password = binding.etPassword.text.toString();
+            val toast = Toast.makeText(context,"Hello World " + gmail, Toast.LENGTH_SHORT)
             toast.show();
         }
 

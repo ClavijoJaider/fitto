@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1037980766533",
+    "project_id": "fitto-82b11",
+    "storage_bucket": "fitto-82b11.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037980766533:android:eea2b6760bebaac405ae2c",
+        "android_client_info": {
+          "package_name": "com.unibague.fitto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjeCXmCpcD_IV8KTcC7lt3-NF2k-FKBnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
