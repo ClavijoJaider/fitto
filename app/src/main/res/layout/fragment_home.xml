@@ -10,6 +10,7 @@
     tools:context=".ui.home.HomeFragment">
 
     <!-- Título principal -->
+
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="0dp"
@@ -36,31 +37,37 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Etiqueta para el campo de correo electrónico -->
+
+    <!-- Campo de correo electrónico con ejemplo -->
+
+
     <TextView
         android:id="@+id/lbl_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Correo electrónico"
-        android:textSize="14sp"
-        android:textColor="@android:color/black"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- Campo de correo electrónico con ejemplo -->
-
+        android:text="Correo electrónico"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/lbl_email"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
-        android:hint="">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbl_email">
 
         <com.google.android.material.textfield.TextInputEditText
+
             android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,29 +76,34 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Etiqueta para el campo de contraseña -->
+
+    <!-- Campo de contraseña con ejemplo -->
+
     <TextView
         android:id="@+id/lbl_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
         android:text="Contraseña"
         android:textColor="@android:color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_email" />
 
-    <!-- Campo de contraseña con ejemplo -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:hint=""
         app:endIconMode="password_toggle"
-        app:layout_constraintTop_toBottomOf="@id/lbl_password"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/lbl_password">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_password"
