@@ -8,11 +8,16 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 import com.unibague.fitto.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+
+    private lateinit var auth : FirebaseAuth;
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -29,6 +34,8 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        auth = Firebase.auth
+
         //
 
 
@@ -36,9 +43,26 @@ class HomeFragment : Fragment() {
         {
             val gmail = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString();
-            val toast = Toast.makeText(context,"Hello World " + gmail, Toast.LENGTH_SHORT)
-            toast.show();
+
+            auth.signInWithEmailAndPassword(gmail,password).addOnCompleteListener{ task -> //esperar hasta que responda
+                if (task.isSuccessful)
+                {
+                    val toast = Toast.makeText(context,"Hello World " + gmail, Toast.LENGTH_SHORT)
+                    toast.show();
+                }
+                else{
+                    val toast = Toast.makeText(context,"Incorrecto " + gmail, Toast.LENGTH_SHORT)
+                    toast.show();
+                }
+
+            }
+
+
+
+
         }
+
+
 
 
 
