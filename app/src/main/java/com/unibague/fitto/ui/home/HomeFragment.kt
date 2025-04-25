@@ -48,7 +48,8 @@ class HomeFragment : Fragment() {
                     val toast = Toast.makeText(context,"Hello World " + gmail, Toast.LENGTH_SHORT)
                     toast.show();
                 }
-                else{
+                else
+                {
                     val toast = Toast.makeText(context,"Incorrecto " + gmail, Toast.LENGTH_SHORT)
                     toast.show();
                 }

@@ -25,8 +25,8 @@
                 android:id="@+id/imgProfile"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@drawable/ic_profile_placeholder"
-                android:background="@drawable/circle_bg"
+                android:src="@null"
+                android:background="@null"
                 android:scaleType="centerCrop"
                 android:layout_marginEnd="8dp"/>
 
@@ -43,7 +43,7 @@
                 android:id="@+id/imgNotif"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_notification"/>
+                android:src="@null"/>
         </LinearLayout>
 
         <!-- Barra de búsqueda -->
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             app:endIconMode="custom"
-            app:endIconDrawable="@drawable/ic_search">
+            app:endIconDrawable="@null">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etSearch"
@@ -67,10 +67,10 @@
             android:id="@+id/imgBanner"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:src="@drawable/banner_placeholder"
+            android:src="@null"
             android:scaleType="centerCrop"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/rounded_bg"/>
+            android:background="@null"/>
 
         <!-- Filtros: tu meta -->
         <LinearLayout
@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:text="Ver todo"
                 android:textSize="14sp"
-                android:textColor="@color/primary"/>
+                android:textColor="@null"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -102,8 +102,7 @@
             android:layout_height="100dp"
             android:orientation="horizontal"
             android:overScrollMode="never"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layoutManager_orientation="horizontal"
+
             android:layout_marginBottom="16dp"/>
 
         <!-- Categorías -->
@@ -127,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:text="Ver todo"
                 android:textSize="14sp"
-                android:textColor="@color/primary"/>
+                android:textColor="@null"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -135,7 +134,6 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layoutManager_orientation="horizontal"
             android:overScrollMode="never"
             android:layout_marginBottom="16dp"/>
 
@@ -160,7 +158,7 @@
                 android:layout_height="wrap_content"
                 android:text="Ver todo"
                 android:textSize="14sp"
-                android:textColor="@color/primary"/>
+                android:textColor="@null"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -169,7 +167,6 @@
             android:layout_height="200dp"
             android:overScrollMode="never"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layoutManager_orientation="horizontal"
             android:layout_marginBottom="16dp"/>
 
         <!-- Dieta Saludable -->
@@ -193,7 +190,7 @@
                 android:layout_height="wrap_content"
                 android:text="Ver todo"
                 android:textSize="14sp"
-                android:textColor="@color/primary"/>
+                android:textColor="@null"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -202,7 +199,6 @@
             android:layout_height="200dp"
             android:overScrollMode="never"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layoutManager_orientation="horizontal"
             android:layout_marginBottom="16dp"/>
 
         <!-- Ejercicios Adicionales -->
@@ -225,7 +221,7 @@
                 android:layout_height="wrap_content"
                 android:text="Ver todo"
                 android:textSize="14sp"
-                android:textColor="@color/primary"/>
+                android:textColor="@null"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

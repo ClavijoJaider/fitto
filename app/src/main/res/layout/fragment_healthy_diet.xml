@@ -32,7 +32,7 @@
             android:id="@+id/btnDiaAnterior"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="<"/>
+            android:text="&lt;"/>
 
         <TextView
             android:id="@+id/tvFechaActual"
@@ -111,7 +111,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/frijoles" />
+                        android:src="@null" />
 
                     <TextView
                         android:id="@+id/tvTituloComida"
