@@ -16,7 +16,6 @@ import com.unibague.fitto.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
     private lateinit var auth : FirebaseAuth;
 
     // This property is only valid between onCreateView and
