@@ -3,7 +3,7 @@
 <div align="center">
 ![Logo Fitto](logo.png)
 </div>
-![Logo Fitto](logo.png)
+
 ![Estado](https://img.shields.io/badge/Estado-En%20Desarrollo-yellow) [![Próximamente en](https://img.shields.io/badge/App_Store-Disponible_Próximamente-blue)](https://) [![Próximamente en](https://img.shields.io/badge/Google_Play-Disponible_Próximamente-green)](https://)
 
 **Fitto** es una aplicación revolucionaria que combina planes de ejercicio personalizados con seguimiento nutricional inteligente para ayudarte a alcanzar tus metas fitness de manera integral.
