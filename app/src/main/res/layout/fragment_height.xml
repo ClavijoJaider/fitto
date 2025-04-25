@@ -1,139 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_height"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".HeightFragment">
 
-    <!-- Encabezado -->
-    <TextView
-        android:id="@+id/tvTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dieta Saludable"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="16dp"/>
-
-    <!-- Selector de fecha -->
+    <!-- Paso y botón "Saltar" -->
     <LinearLayout
-        android:id="@+id/selectorFecha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTitulo">
-
-        <Button
-            android:id="@+id/btnDiaAnterior"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="<"/>
+        android:gravity="space_between">
 
         <TextView
-            android:id="@+id/tvFechaActual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Febrero 2022"
-            android:padding="8dp"/>
+            android:text="Paso 5 de 7"
+            android:textSize="14sp" />
 
-        <Button
-            android:id="@+id/btnDiaSiguiente"
+        <TextView
+            android:id="@+id/btn_skip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=">"/>
+            android:text="Saltar"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
     </LinearLayout>
 
-    <!-- Filtros: Desayuno, Almuerzo, Cena -->
+    <!-- Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿CUÁNTO MIDES?"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Selector de unidad -->
     <RadioGroup
-        android:id="@+id/rgComidas"
-        android:layout_width="match_parent"
+        android:id="@+id/unitGroup"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/selectorFecha">
+        android:layout_gravity="center_horizontal">
 
         <RadioButton
-            android:id="@+id/rbDesayuno"
+            android:id="@+id/radio_feet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Desayuno"/>
+            android:text="FEET" />
 
         <RadioButton
-            android:id="@+id/rbAlmuerzo"
+            android:id="@+id/radio_cm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Almuerzo"/>
-
-        <RadioButton
-            android:id="@+id/rbCena"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cena"/>
+            android:text="CM"
+            android:checked="true"/>
     </RadioGroup>
 
-    <!-- Contenedor de comidas -->
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/rgComidas"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="8dp">
+    <!-- Campo de entrada -->
+    <EditText
+        android:id="@+id/height_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="85 | cm"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:layout_marginVertical="24dp" />
 
-        <LinearLayout
-            android:id="@+id/contenedorComidas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Aquí agregamos directamente el diseño de un item de comida -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/ivComida"
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/frijoles" />
-
-                    <TextView
-                        android:id="@+id/tvTituloComida"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Frijoles verdes, tomates, huevos"
-                        android:textSize="16sp"
-                        android:padding="8dp"/>
-
-                    <TextView
-                        android:id="@+id/tvInfoComida"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="135 kcal · 30 min"
-                        android:padding="8dp"
-                        android:textColor="#888888"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Botón de siguiente -->
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PRÓXIMOS PASOS"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#2196F3"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
