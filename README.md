@@ -1,7 +1,7 @@
 # 🏋️♀️ Fitto - Tu Compañero de Fitness Inteligente
 
 <div align="center">
-![Logo Fitto](logo.png)
+![Logo Fitto]([logo.png](https://github.com/ClavijoJaider/fitto/blob/main/logo.png))
 </div>
 
 ![Estado](https://img.shields.io/badge/Estado-En%20Desarrollo-yellow) [![Próximamente en](https://img.shields.io/badge/App_Store-Disponible_Próximamente-blue)](https://) [![Próximamente en](https://img.shields.io/badge/Google_Play-Disponible_Próximamente-green)](https://)
