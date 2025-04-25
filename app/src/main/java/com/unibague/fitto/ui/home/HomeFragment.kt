@@ -37,8 +37,6 @@ class HomeFragment : Fragment() {
         auth = Firebase.auth
 
         //
-
-
         binding.btnLogin.setOnClickListener()
         {
             val gmail = binding.etEmail.text.toString()
@@ -54,18 +52,8 @@ class HomeFragment : Fragment() {
                     val toast = Toast.makeText(context,"Incorrecto " + gmail, Toast.LENGTH_SHORT)
                     toast.show();
                 }
-
             }
-
-
-
-
         }
-
-
-
-
-
         //
         return root
     }
