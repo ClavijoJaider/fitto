@@ -1,5 +1,6 @@
 package com.unibague.fitto.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.unibague.fitto.MenuPrincipalActivity
 import com.unibague.fitto.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -46,6 +48,11 @@ class HomeFragment : Fragment() {
                 {
                     val toast = Toast.makeText(context,"Hello World " + gmail, Toast.LENGTH_SHORT)
                     toast.show();
+
+                    val intent = Intent(activity, MenuPrincipalActivity::class.java)
+                    startActivity(intent)
+
+
                 }
                 else
                 {
