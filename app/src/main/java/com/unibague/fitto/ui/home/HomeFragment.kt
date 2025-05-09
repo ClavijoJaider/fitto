@@ -61,6 +61,12 @@ class HomeFragment : Fragment() {
                 }
             }
         }
+
+        binding.tvRegister.setOnClickListener()
+        {
+            val intent = Intent(activity, MenuPrincipalActivity::class.java)
+            startActivity(intent)
+        }
         //
         return root
     }
