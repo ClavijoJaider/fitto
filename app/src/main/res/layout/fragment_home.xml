@@ -128,7 +128,6 @@
     <!-- Botón principal de inicio de sesión -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_login"
-        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -136,7 +135,9 @@
         app:cornerRadius="8dp"
         app:layout_constraintTop_toBottomOf="@id/tv_forgot_password"
         app:layout_constraintStart_toStartOf="@id/til_password"
-        app:layout_constraintEnd_toEndOf="@id/til_password" />
+        app:layout_constraintEnd_toEndOf="@id/til_password"
+        app:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF" />
 
     <!-- Texto para separar opciones: "o inicia sesión con" -->
     <TextView
@@ -162,7 +163,9 @@
         app:cornerRadius="8dp"
         app:layout_constraintTop_toBottomOf="@id/tv_or_login_with"
         app:layout_constraintStart_toStartOf="@id/tv_or_login_with"
-        app:layout_constraintEnd_toEndOf="@id/tv_or_login_with" />
+        app:layout_constraintEnd_toEndOf="@id/tv_or_login_with"
+        app:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF"/>
 
     <!-- Botón de Google -->
     <com.google.android.material.button.MaterialButton
@@ -175,7 +178,9 @@
         app:cornerRadius="8dp"
         app:layout_constraintTop_toBottomOf="@id/btn_facebook"
         app:layout_constraintStart_toStartOf="@id/btn_facebook"
-        app:layout_constraintEnd_toEndOf="@id/btn_facebook" />
+        app:layout_constraintEnd_toEndOf="@id/btn_facebook"
+        app:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF"/>
 
     <!-- Texto para registrarse -->
     <TextView
