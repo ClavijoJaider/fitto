@@ -1,9 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
+        android:icon="@null"
         android:title="Inicio" />
     <item
-        android:id="@+id/nav_workout"
-        android:title="Entrenamiento" />
+        android:id="@+id/nav_dieta"
+        android:icon="@null"
+        android:title="Dieta saludable" />
+    <item
+        android:id="@+id/nav_ejercitarse"
+        android:icon="@null"
+        android:title="Ejercitarse" />
+    <item
+        android:id="@+id/nav_perfil"
+        android:icon="@null"
+        android:title="Perfil" />
 </menu>

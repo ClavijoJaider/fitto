@@ -13,6 +13,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.unibague.fitto.MenuPrincipalActivity
+import com.unibague.fitto.RegistroActivity
 import com.unibague.fitto.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -64,7 +65,7 @@ class HomeFragment : Fragment() {
 
         binding.tvRegister.setOnClickListener()
         {
-            val intent = Intent(activity, MenuPrincipalActivity::class.java)
+            val intent = Intent(activity, RegistroActivity::class.java)
             startActivity(intent)
         }
         //
