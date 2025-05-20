@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.unibague.fitto.BienvenidaActivity
 import com.unibague.fitto.MenuPrincipalActivity
 import com.unibague.fitto.RegistroActivity
 import com.unibague.fitto.databinding.FragmentHomeBinding
