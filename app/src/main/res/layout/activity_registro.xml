@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/main_registro"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@android:color/white"
     tools:context=".RegistroActivity">
+
     <!-- Título principal -->
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="¡BIENVENIDO A FITTO!"
+        android:text="¡REGÍSTRATE EN FITTO!"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -25,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="¡Hola! Regístrate para continuar."
+        android:text="Crea una cuenta para empezar."
         android:textColor="@android:color/darker_gray"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
@@ -45,6 +49,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_subtitle" />
 
+    <!-- Campo de correo -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -66,7 +71,7 @@
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Etiqueta para el campo de contraseña -->
+    <!-- Etiqueta para contraseña -->
     <TextView
         android:id="@+id/lbl_password"
         android:layout_width="wrap_content"
@@ -79,6 +84,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_email" />
 
+    <!-- Campo de contraseña -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -96,85 +102,35 @@
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="password123"
+            android:hint="mínimo 6 caracteres"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Enlace para recuperar contraseña -->
-    <TextView
-        android:id="@+id/tv_forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="¿Olvidaste tu contraseña?"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/til_password"
-        app:layout_constraintEnd_toEndOf="@id/til_password" />
 
     <!-- Botón principal de registro -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_register"
-        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="REGISTRARSE"
         app:cornerRadius="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_forgot_password"
+        app:layout_constraintTop_toBottomOf="@id/til_password"
         app:layout_constraintStart_toStartOf="@id/til_password"
-        app:layout_constraintEnd_toEndOf="@id/til_password" />
+        app:layout_constraintEnd_toEndOf="@id/til_password"
+        app:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF" />
 
-    <!-- Texto para separar opciones: "o regístrate con" -->
-    <TextView
-        android:id="@+id/tv_or_register_with"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="o regístrate con"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/btn_register"
-        app:layout_constraintStart_toStartOf="@id/btn_register"
-        app:layout_constraintEnd_toEndOf="@id/btn_register" />
-
-    <!-- Botón de Facebook -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_facebook"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="280dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="20dp"
-        android:text="Regístrate con Facebook"
-        app:cornerRadius="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_or_register_with"
-        app:layout_constraintStart_toStartOf="@id/tv_or_register_with"
-        app:layout_constraintEnd_toEndOf="@id/tv_or_register_with" />
-
-    <!-- Botón de Google -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_google"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Regístrate con Google"
-        app:cornerRadius="8dp"
-        app:layout_constraintTop_toBottomOf="@id/btn_facebook"
-        app:layout_constraintStart_toStartOf="@id/btn_facebook"
-        app:layout_constraintEnd_toEndOf="@id/btn_facebook" />
-
-    <!-- Texto para ir a iniciar sesión -->
+    <!-- Texto para iniciar sesión si ya hay cuenta -->
     <TextView
         android:id="@+id/tv_go_to_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="¿Ya tienes cuenta? ¡Inicia sesión!"
-        android:textColor="@android:color/darker_gray"
+        android:text="¿Ya tienes cuenta? Inicia sesión"
+        android:textColor="@android:color/holo_blue_dark"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/btn_google"
-        app:layout_constraintStart_toStartOf="@id/btn_google"
-        app:layout_constraintEnd_toEndOf="@id/btn_google" />
+        app:layout_constraintTop_toBottomOf="@id/btn_register"
+        app:layout_constraintStart_toStartOf="@id/btn_register"
+        app:layout_constraintEnd_toEndOf="@id/btn_register" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
