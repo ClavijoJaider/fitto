@@ -50,7 +50,7 @@ class RegistroActivity : AppCompatActivity() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Registro exitoso: $email", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this, MenuPrincipalActivity::class.java))
+                        startActivity(Intent(this, SeleccionFavoritoActivity::class.java))
                         finish()
                     } else {
                         Toast.makeText(

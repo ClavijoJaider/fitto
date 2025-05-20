@@ -15,6 +15,7 @@ import com.google.firebase.auth.auth
 import com.unibague.fitto.BienvenidaActivity
 import com.unibague.fitto.MenuPrincipalActivity
 import com.unibague.fitto.RegistroActivity
+import com.unibague.fitto.SeleccionFavoritoActivity
 import com.unibague.fitto.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -51,7 +52,7 @@ class HomeFragment : Fragment() {
                     val toast = Toast.makeText(context,"Hello World " + gmail, Toast.LENGTH_SHORT)
                     toast.show();
 
-                    val intent = Intent(activity, MenuPrincipalActivity::class.java)
+                    val intent = Intent(activity, SeleccionFavoritoActivity::class.java)
                     startActivity(intent)
 
 
