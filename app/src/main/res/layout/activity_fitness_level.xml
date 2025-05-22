@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#FFFFFF">
+
+    <!-- Atrás / Saltar -->
+    <TextView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="←" android:textSize="20sp" android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/btnSkip"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Saltar" android:textSize="16sp" android:textColor="#2196F3" android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Paso y pregunta -->
+    <TextView
+        android:id="@+id/stepText"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Paso 6 de 7" android:textSize="14sp" android:textColor="#666666"
+        app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="48dp"/>
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="0dp" android:layout_height="wrap_content"
+        android:text="¿CUÁL ES TU NIVEL DE CONDICIÓN FÍSICA?" android:textSize="26sp"
+        android:textStyle="bold" android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/stepText"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Opciones -->
+    <LinearLayout
+        android:id="@+id/optionsContainer"
+        android:layout_width="0dp" android:layout_height="wrap_content"
+        android:orientation="vertical" android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/questionText"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBeginner"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent" android:layout_height="48dp"
+            android:text="PRINCIPIANTES"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#000000"
+            app:cornerRadius="4dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnIntermediate"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent" android:layout_height="48dp"
+            android:text="INTERMEDIO"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:layout_marginTop="8dp"
+            app:cornerRadius="4dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdvanced"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent" android:layout_height="48dp"
+            android:text="AVANZADO"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:layout_marginTop="8dp"
+            app:cornerRadius="4dp"/>
+    </LinearLayout>
+
+    <!-- Botón siguiente -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nextButton"
+        android:layout_width="0dp" android:layout_height="56dp"
+        android:layout_marginTop="40dp"
+        android:text="PRÓXIMOS PASOS" android:textAllCaps="false"
+        android:textSize="16sp" android:backgroundTint="#2196F3" android:textColor="#FFFFFF"
+        app:cornerRadius="28dp"
+        app:layout_constraintTop_toBottomOf="@id/optionsContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

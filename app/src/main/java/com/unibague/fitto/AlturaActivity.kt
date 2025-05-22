@@ -64,7 +64,7 @@ class AlturaActivity : AppCompatActivity() {
             }
             val unit = if (unitToggle.checkedButtonId == btnKg.id) "KG" else "LBS"
             startActivity(
-                Intent(this, MenuPrincipalActivity::class.java)
+                Intent(this, FitnessLevelActivity::class.java)
                     .putExtra("WEIGHT", w)
                     .putExtra("UNIT", unit)
             )
