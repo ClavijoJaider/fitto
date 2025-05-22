@@ -16,45 +16,42 @@ class ObjectiveActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_objective)
 
-        val btnObjective1 = findViewById<MaterialButton>(R.id.btnObjective1)
-        val btnObjective2 = findViewById<MaterialButton>(R.id.btnObjective2)
-        val btnObjective3 = findViewById<MaterialButton>(R.id.btnObjective3)
+        val btn1       = findViewById<MaterialButton>(R.id.btnObjective1)
+        val btn2       = findViewById<MaterialButton>(R.id.btnObjective2)
+        val btn3       = findViewById<MaterialButton>(R.id.btnObjective3)
         val nextButton = findViewById<MaterialButton>(R.id.nextButton)
+        val back       = findViewById<TextView>(R.id.btnBack)
+        val skip       = findViewById<TextView>(R.id.btnSkip)
 
-        val objectiveButtons = listOf(btnObjective1, btnObjective2, btnObjective3)
-
-        fun updateSelection(button: MaterialButton) {
-            objectiveButtons.forEach {
-                it.setBackgroundColor(Color.TRANSPARENT)
-                it.setTextColor(Color.BLACK)
-            }
-            button.setBackgroundColor(Color.BLACK)
-            button.setTextColor(Color.WHITE)
-            selectedButton = button
-            selectedObjective = button.text.toString()
-        }
-
-        btnObjective1.setOnClickListener { updateSelection(btnObjective1) }
-        btnObjective2.setOnClickListener { updateSelection(btnObjective2) }
-        btnObjective3.setOnClickListener { updateSelection(btnObjective3) }
-
-        nextButton.setOnClickListener {
-            if (selectedObjective != null) {
-                val intent = Intent(this, MenuPrincipalActivity::class.java)
-                intent.putExtra("OBJECTIVE", selectedObjective)
-                startActivity(intent)
-            } else {
-                // Puedes mostrar un mensaje si deseas
+        listOf(btn1, btn2, btn3).forEach { btn ->
+            btn.setOnClickListener {
+                // Reset
+                listOf(btn1, btn2, btn3).forEach { b ->
+                    b.setBackgroundColor(Color.TRANSPARENT)
+                    b.setTextColor(Color.BLACK)
+                }
+                // Select
+                btn.setBackgroundColor(Color.BLACK)
+                btn.setTextColor(Color.WHITE)
+                selectedButton = btn
+                selectedObjective = btn.text.toString()
             }
         }
 
-        findViewById<TextView>(R.id.btnSkip).setOnClickListener {
-            // lógica de salto, por ejemplo:
+        back.setOnClickListener { finish() }
+        skip.setOnClickListener {
+            // Guarda null o default si quieres
             startActivity(Intent(this, MenuPrincipalActivity::class.java))
         }
 
-        findViewById<TextView>(R.id.btnBack).setOnClickListener {
-            finish()
+        nextButton.setOnClickListener {
+            selectedObjective?.let {
+                // Guardar
+                val prefs = getSharedPreferences("fitto_prefs", MODE_PRIVATE)
+                prefs.edit().putString("OBJECTIVE", it).apply()
+                // Ir a MenuPrincipal o Perfil
+                startActivity(Intent(this, MenuPrincipalActivity::class.java))
+            }
         }
     }
 }

@@ -1,18 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
         android:id="@+id/nav_home"
-        android:icon="@null"
+        android:icon="@android:drawable/ic_menu_view"
         android:title="Inicio" />
+
     <item
         android:id="@+id/nav_dieta"
-        android:icon="@null"
-        android:title="Dieta saludable" />
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Dieta Saludable" />
+
     <item
-        android:id="@+id/nav_ejercitarse"
-        android:icon="@null"
+        android:id="@+id/nav_ejercitar"
+        android:icon="@android:drawable/ic_menu_compass"
         android:title="Ejercitarse" />
+
     <item
-        android:id="@+id/nav_perfil"
-        android:icon="@null"
+        android:id="@+id/nav_profile"
+        android:icon="@android:drawable/ic_menu_gallery"
         android:title="Perfil" />
+
 </menu>

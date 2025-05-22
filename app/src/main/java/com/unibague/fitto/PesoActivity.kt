@@ -39,48 +39,48 @@ class PesoActivity : AppCompatActivity() {
         back        = findViewById(R.id.btnBack)
         skip        = findViewById(R.id.btnSkip)
 
-        // Por defecto seleccionamos KG
+        // Selección por defecto
         unitToggle.check(btnKg.id)
         styleButtons(btnKg.id)
 
-        // Listener de toggle
         unitToggle.addOnButtonCheckedListener { _, checkedId, isChecked ->
-            if (isChecked) {
-                styleButtons(checkedId)
-            }
+            if (isChecked) styleButtons(checkedId)
         }
 
         back.setOnClickListener { finish() }
         skip.setOnClickListener {
-            // Lógica de 'Saltar'
             Toast.makeText(this, "Saltaste este paso", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, AlturaActivity::class.java))
         }
 
         nextButton.setOnClickListener {
-            val w = weightInput.text.toString().trim()
-            if (w.isEmpty()) {
+            val text = weightInput.text.toString().trim()
+            if (text.isEmpty()) {
                 Toast.makeText(this, "Ingresa tu peso", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            val w = text.toFloat()
             val unit = if (unitToggle.checkedButtonId == btnKg.id) "KG" else "LBS"
-            startActivity(
-                Intent(this, AlturaActivity::class.java)
-                    .putExtra("WEIGHT", w)
-                    .putExtra("UNIT", unit)
-            )
+
+            // Guardar
+            val prefs = getSharedPreferences("fitto_prefs", MODE_PRIVATE)
+            prefs.edit()
+                .putFloat("WEIGHT", w)
+                .putString("UNIT_WEIGHT", unit)
+                .apply()
+
+            // Avanzar
+            startActivity(Intent(this, AlturaActivity::class.java))
         }
     }
 
     private fun styleButtons(selectedId: Int) {
-        // kg seleccionado?
         if (selectedId == btnKg.id) {
-            // KG = filled blue
             btnKg.apply {
                 backgroundTintList = ColorStateList.valueOf(blue)
                 strokeWidth = 0
                 setTextColor(white)
             }
-            // LBS = outlined
             btnLbs.apply {
                 backgroundTintList = ColorStateList.valueOf(white)
                 strokeWidth = 2
@@ -88,13 +88,11 @@ class PesoActivity : AppCompatActivity() {
                 setTextColor(grayText)
             }
         } else {
-            // LBS = filled blue
             btnLbs.apply {
                 backgroundTintList = ColorStateList.valueOf(blue)
                 strokeWidth = 0
                 setTextColor(white)
             }
-            // KG = outlined
             btnKg.apply {
                 backgroundTintList = ColorStateList.valueOf(white)
                 strokeWidth = 2
