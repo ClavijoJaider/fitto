@@ -15,12 +15,7 @@ class BienvenidaActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_bienvenida)
 
-        // Ajuste de insets para edge-to-edge
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
 
         // 1. Referencia al botón btn_start
         val btnStart: Button = findViewById(R.id.btn_start)
