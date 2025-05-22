@@ -16,7 +16,8 @@
         tools:targetApi="31">
         <activity
             android:name=".SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/MyTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -31,11 +32,6 @@
         <activity
             android:name=".BienvenidaActivity"
             android:exported="true">
-            <intent-filter> <!-- Esto es para lanzar esta vista de primeras -->
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
