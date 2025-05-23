@@ -13,7 +13,8 @@ class MenuPrincipalActivity : AppCompatActivity() {
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNav.setOnItemSelectedListener { item ->
-            when (item.itemId) {
+            when (item.itemId)
+            {
                 R.id.nav_home -> true
                 R.id.nav_dieta -> {
                     startActivity(Intent(this, DietaSaludableActivity::class.java))

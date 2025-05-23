@@ -19,12 +19,7 @@ class PerfilActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil)
 
-        // Ajuste edge-to-edge
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val sys = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(sys.left, sys.top, sys.right, sys.bottom)
-            insets
-        }
+
 
         prefs = getSharedPreferences("fitto_prefs", MODE_PRIVATE)
 
@@ -152,11 +147,11 @@ class PerfilActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_dieta -> {
-                    startActivity(Intent(this, MenuPrincipalActivity::class.java))
+                    startActivity(Intent(this, DietaSaludableActivity::class.java))
                     true
                 }
                 R.id.nav_ejercitar -> {
-                    startActivity(Intent(this, MenuPrincipalActivity::class.java))
+                    startActivity(Intent(this, EntrenamientoActivity::class.java))
                     true
                 }
                 R.id.nav_profile -> true

@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    >
 
-    <!-- Contenido desplazable, dejando margen para la nav bar -->
+    <!-- Encabezado -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mi Perfil"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:gravity="center"
+        android:padding="16dp" />
+
+    <!-- Contenedor de contenido -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="56dp"
-        android:padding="24dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Título -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mi Perfil"
-                android:textSize="26sp"
-                android:textStyle="bold"/>
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <!-- Información básica -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -46,52 +49,56 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Edad: -- años"
-                        android:textSize="16sp"/>
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/tvWeightInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Peso corporal: -- kg"
-                        android:textSize="16sp"/>
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp" />
 
                     <TextView
                         android:id="@+id/tvHeightInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Estatura: -- cm"
-                        android:textSize="16sp"/>
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp" />
 
                     <TextView
                         android:id="@+id/tvLevelInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Nivel actividad: --"
-                        android:textSize="16sp"/>
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp" />
 
                     <TextView
                         android:id="@+id/tvObjectiveInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Objetivo fitness: --"
-                        android:textSize="16sp"/>
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Metabolismo -->
             <TextView
-                android:layout_marginTop="24dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Metabolismo"
+                android:textStyle="bold"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:layout_marginBottom="8dp" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -107,14 +114,14 @@
                         android:layout_height="wrap_content"
                         android:text="BMR: -- kcal"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="(Energía en reposo)"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp" />
 
                     <TextView
                         android:id="@+id/tvTdee"
@@ -123,31 +130,31 @@
                         android:text="TDEE: -- kcal"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:layout_marginTop="12dp"/>
+                        android:layout_marginTop="12dp" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="(Mantenimiento actividad)"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Composición Corporal -->
             <TextView
-                android:layout_marginTop="24dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Composición Corporal"
+                android:textStyle="bold"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:layout_marginBottom="8dp" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -163,7 +170,7 @@
                         android:layout_height="wrap_content"
                         android:text="IMC: --"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                     <TextView
                         android:id="@+id/tvBmiCat"
                         android:layout_width="match_parent"
@@ -171,72 +178,72 @@
                         android:text="(Clasificación: --)"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp" />
 
                     <TextView
                         android:id="@+id/tvBodyFat"
-                        android:layout_marginTop="12dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="% Grasa: -- %"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="(Fórmula Deurenberg)"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp" />
 
                     <TextView
                         android:id="@+id/tvLeanMass"
-                        android:layout_marginTop="12dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Masa Magra: -- kg"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="(Peso sin grasa)"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp" />
 
                     <TextView
                         android:id="@+id/tvWater"
-                        android:layout_marginTop="12dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Agua: -- L"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="(≈60% peso)"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Macronutrientes -->
             <TextView
-                android:layout_marginTop="24dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Macronutrientes"
+                android:textStyle="bold"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:layout_marginBottom="8dp" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -252,63 +259,63 @@
                         android:layout_height="wrap_content"
                         android:text="Proteínas: -- g/día"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="(2 g/kg peso)"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp" />
 
                     <TextView
                         android:id="@+id/tvFatReq"
-                        android:layout_marginTop="12dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Grasas: -- g/día"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="(25% calorías)"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp" />
 
                     <TextView
                         android:id="@+id/tvCarbsReq"
-                        android:layout_marginTop="12dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Carbohidratos: -- g/día"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="(Resto calorías)"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Extras Fitness -->
+            <!-- Cálculos Avanzados -->
             <TextView
-                android:layout_marginTop="24dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cálculos Avanzados"
+                android:textStyle="bold"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:layout_marginBottom="8dp" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="4dp">
 
@@ -324,62 +331,62 @@
                         android:layout_height="wrap_content"
                         android:text="Peso Ideal: -- kg"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="( fórmula Devine )"
+                        android:text="(fórmula Devine)"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp" />
 
                     <TextView
                         android:id="@+id/tvBsa"
-                        android:layout_marginTop="12dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="BSA: -- m²"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="(Mosteller)"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp" />
 
                     <TextView
                         android:id="@+id/tvHrMax"
-                        android:layout_marginTop="12dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="HR Máx: -- lpm"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="(220 – edad)"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp" />
 
                     <TextView
                         android:id="@+id/tvHrZone"
-                        android:layout_marginTop="12dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Zonas: --"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp" />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="(50–60%,60–70%,70–80%,80–90%)"
                         android:textSize="14sp"
                         android:textColor="#666666"
-                        android:layout_marginTop="4dp"/>
+                        android:layout_marginTop="4dp" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -387,17 +394,14 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Bottom Navigation -->
+    <!-- Menú inferior -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:itemIconTint="@null"
-        app:itemTextColor="@null"
+        android:background="#EEEEEE"
         app:menu="@menu/bottom_nav_menu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:labelVisibilityMode="labeled"
+        android:elevation="8dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

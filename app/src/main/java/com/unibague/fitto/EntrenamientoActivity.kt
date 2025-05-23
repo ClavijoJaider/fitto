@@ -1,5 +1,6 @@
 package com.unibague.fitto
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -7,6 +8,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class EntrenamientoActivity : AppCompatActivity() {
 
@@ -22,6 +24,30 @@ class EntrenamientoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entrenamiento)
 
+        // BottomNavigationView (igual que en MenuPrincipalActivity)
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNav.selectedItemId = R.id.nav_ejercitar
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    startActivity(Intent(this, MenuPrincipalActivity::class.java))
+                    true
+                }
+                R.id.nav_dieta -> {
+                    startActivity(Intent(this, DietaSaludableActivity::class.java))
+                    true
+                }
+                R.id.nav_ejercitar ->
+
+                    true
+
+                R.id.nav_profile -> {
+                    startActivity(Intent(this, PerfilActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
         // Botones
         btnPrincipiante = findViewById(R.id.btnPrincipiante)
         btnIntermedio = findViewById(R.id.btnIntermedio)

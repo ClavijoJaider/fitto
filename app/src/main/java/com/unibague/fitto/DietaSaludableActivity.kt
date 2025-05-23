@@ -61,7 +61,7 @@ class DietaSaludableActivity : AppCompatActivity() {
                 }
                 R.id.nav_dieta -> true
                 R.id.nav_ejercitar -> {
-                    startActivity(Intent(this, MenuPrincipalActivity::class.java))
+                    startActivity(Intent(this, EntrenamientoActivity::class.java))
                     true
                 }
                 R.id.nav_profile -> {
