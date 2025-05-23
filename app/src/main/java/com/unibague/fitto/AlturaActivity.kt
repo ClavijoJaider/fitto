@@ -14,8 +14,8 @@ import com.google.android.material.textfield.TextInputEditText
 class AlturaActivity : AppCompatActivity() {
 
     private lateinit var unitToggle: MaterialButtonToggleGroup
-    private lateinit var btnLbs: MaterialButton
-    private lateinit var btnKg: MaterialButton
+    private lateinit var btnCm: MaterialButton
+    private lateinit var btnFt: MaterialButton
     private lateinit var heightInput: TextInputEditText
     private lateinit var nextButton: MaterialButton
     private lateinit var back: TextView
@@ -31,17 +31,17 @@ class AlturaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_altura)
 
         // Referencias
-        unitToggle   = findViewById(R.id.unitToggle)
-        btnLbs       = findViewById(R.id.btnLbs)
-        btnKg        = findViewById(R.id.btnKg)
-        heightInput  = findViewById(R.id.weightInput) // mismo ID, pero es altura
-        nextButton   = findViewById(R.id.nextButton)
-        back         = findViewById(R.id.btnBack)
-        skip         = findViewById(R.id.btnSkip)
+        unitToggle  = findViewById(R.id.unitToggle)
+        btnCm       = findViewById(R.id.btnCm)
+        btnFt       = findViewById(R.id.btnFt)
+        heightInput = findViewById(R.id.heightInput)
+        nextButton  = findViewById(R.id.nextButton)
+        back        = findViewById(R.id.btnBack)
+        skip        = findViewById(R.id.btnSkip)
 
-        // Selección por defecto
-        unitToggle.check(btnKg.id)
-        styleButtons(btnKg.id)
+        // Selección por defecto: centímetros
+        unitToggle.check(btnCm.id)
+        styleButtons(btnCm.id)
 
         unitToggle.addOnButtonCheckedListener { _, checkedId, isChecked ->
             if (isChecked) styleButtons(checkedId)
@@ -71,25 +71,27 @@ class AlturaActivity : AppCompatActivity() {
     }
 
     private fun styleButtons(selectedId: Int) {
-        if (selectedId == btnKg.id) {
-            btnKg.apply {
+        if (selectedId == btnCm.id) {
+            // Centímetros selected
+            btnCm.apply {
                 backgroundTintList = ColorStateList.valueOf(blue)
                 strokeWidth = 0
                 setTextColor(white)
             }
-            btnLbs.apply {
+            btnFt.apply {
                 backgroundTintList = ColorStateList.valueOf(white)
                 strokeWidth = 2
                 strokeColor = ColorStateList.valueOf(grayStroke)
                 setTextColor(grayText)
             }
         } else {
-            btnLbs.apply {
+            // Pies selected
+            btnFt.apply {
                 backgroundTintList = ColorStateList.valueOf(blue)
                 strokeWidth = 0
                 setTextColor(white)
             }
-            btnKg.apply {
+            btnCm.apply {
                 backgroundTintList = ColorStateList.valueOf(white)
                 strokeWidth = 2
                 strokeColor = ColorStateList.valueOf(grayStroke)

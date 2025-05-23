@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/layoutWeight"
+    android:id="@+id/layoutHeight"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
@@ -50,14 +50,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="¿CUÁNTO MIDES?"
+        android:text="¿CUÁL ES TU ESTATURA?"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/stepText" />
 
-    <!-- Segmented control -->
+    <!-- Segmented control para unidades de altura -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/segmentContainer"
         android:layout_width="0dp"
@@ -77,31 +77,31 @@
             app:singleSelection="true">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnLbs"
+                android:id="@+id/btnCm"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="LBS"
+                android:text="CM"
                 android:textAllCaps="false"
                 android:textSize="14sp"/>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnKg"
+                android:id="@+id/btnFt"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="KG"
+                android:text="FT"
                 android:textAllCaps="false"
                 android:textSize="14sp"/>
 
         </com.google.android.material.button.MaterialButtonToggleGroup>
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Input de peso -->
+    <!-- Input de altura -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/weightInputLayout"
+        android:id="@+id/heightInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -116,13 +116,13 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/weightInput"
+            android:id="@+id/heightInput"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:gravity="center"
-            android:hint="87 kg"
+            android:hint="170 cm"
             android:textSize="18sp"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             android:background="@null"
             android:focusableInTouchMode="true"
             android:selectAllOnFocus="true"/>
@@ -141,7 +141,7 @@
         android:backgroundTint="#2196F3"
         android:elevation="4dp"
         android:textColor="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/weightInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/heightInputLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
