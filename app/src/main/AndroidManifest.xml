@@ -15,6 +15,15 @@
         android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".EntrenamientoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleComidaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DietaSaludableActivity"
+            android:exported="false" />
+        <activity
             android:name=".PerfilActivity"
             android:exported="false" />
         <activity
