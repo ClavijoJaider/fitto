@@ -5,8 +5,6 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlin.math.pow
 import kotlin.math.sqrt
@@ -18,8 +16,6 @@ class PerfilActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil)
-
-
 
         prefs = getSharedPreferences("fitto_prefs", MODE_PRIVATE)
 
@@ -46,11 +42,11 @@ class PerfilActivity : AppCompatActivity() {
     }
 
     private fun showMetabolism() {
-        val age = prefs.getInt("AGE", 25)
-        val w   = prefs.getFloat("WEIGHT", 70f)
-        val h   = prefs.getFloat("HEIGHT", 170f)
-        val male= prefs.getBoolean("IS_MALE", true)
-        val lvl = prefs.getString("FITNESS_LEVEL", "--")!!
+        val age  = prefs.getInt("AGE", 25)
+        val w    = prefs.getFloat("WEIGHT", 70f)
+        val h    = prefs.getFloat("HEIGHT", 170f)
+        val male = prefs.getBoolean("IS_MALE", true)
+        val lvl  = prefs.getString("FITNESS_LEVEL", "--")!!
 
         val bmr = if (male)
             10f*w + 6.25f*h - 5f*age + 5f
@@ -70,10 +66,10 @@ class PerfilActivity : AppCompatActivity() {
     }
 
     private fun showBodyComposition() {
-        val age    = prefs.getInt("AGE", 25)
-        val w      = prefs.getFloat("WEIGHT", 70f)
-        val h      = prefs.getFloat("HEIGHT", 170f)
-        val male   = prefs.getBoolean("IS_MALE", true)
+        val age  = prefs.getInt("AGE", 25)
+        val w    = prefs.getFloat("WEIGHT", 70f)
+        val h    = prefs.getFloat("HEIGHT", 170f)
+        val male = prefs.getBoolean("IS_MALE", true)
 
         val bmi = w / (h/100f).pow(2)
         val cat = when {
@@ -87,11 +83,11 @@ class PerfilActivity : AppCompatActivity() {
         val lean    = w * (1 - bodyFat/100f)
         val water   = w * 0.6f
 
-        findViewById<TextView>(R.id.tvBmi).text    = "IMC: ${"%.1f".format(bmi)}"
-        findViewById<TextView>(R.id.tvBmiCat).text = "(Clasificación: $cat)"
-        findViewById<TextView>(R.id.tvBodyFat).text= "% Grasa: ${"%.1f".format(bodyFat)} %"
-        findViewById<TextView>(R.id.tvLeanMass).text="Masa Magra: ${"%.1f".format(lean)} kg"
-        findViewById<TextView>(R.id.tvWater).text   ="Agua: ${"%.1f".format(water)} L"
+        findViewById<TextView>(R.id.tvBmi).text     = "IMC: ${"%.1f".format(bmi)}"
+        findViewById<TextView>(R.id.tvBmiCat).text  = "(Clasificación: $cat)"
+        findViewById<TextView>(R.id.tvBodyFat).text = "% Grasa: ${"%.1f".format(bodyFat)} %"
+        findViewById<TextView>(R.id.tvLeanMass).text= "Masa Magra: ${"%.1f".format(lean)} kg"
+        findViewById<TextView>(R.id.tvWater).text   = "Agua: ${"%.1f".format(water)} L"
     }
 
     private fun showMacroRequirements() {
@@ -113,22 +109,18 @@ class PerfilActivity : AppCompatActivity() {
         val w   = prefs.getFloat("WEIGHT", 70f)
         val h   = prefs.getFloat("HEIGHT", 170f)
 
-        // Peso ideal Devine
         val inchesOver5ft = (h - 152.4f) / 2.54f
         val ideal = if (prefs.getBoolean("IS_MALE", true))
             50f + 2.3f * inchesOver5ft
         else
             45.5f + 2.3f * inchesOver5ft
 
-        // BSA Mosteller
-        val bsa = sqrt((h * w) / 3600f)
-
-        // HR Máx + Zonas
+        val bsa   = sqrt((h * w) / 3600f)
         val hrMax = 220 - age
-        val zones = listOf(0.5f, 0.6f, 0.7f, 0.8f, 0.9f)
+        val zones = listOf(0.5f,0.6f,0.7f,0.8f,0.9f)
             .windowed(2)
-            .joinToString(" | ") { (low, high) ->
-                "${(hrMax * low).toInt()}–${(hrMax * high).toInt()} lpm"
+            .joinToString(" | ") { (low,high) ->
+                "${(hrMax*low).toInt()}–${(hrMax*high).toInt()} lpm"
             }
 
         findViewById<TextView>(R.id.tvIdealWeight).text = "Peso Ideal: ${"%.1f".format(ideal)} kg"
@@ -140,23 +132,15 @@ class PerfilActivity : AppCompatActivity() {
     private fun setupBottomNav() {
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNav.selectedItemId = R.id.nav_profile
-        bottomNav.setOnNavigationItemSelectedListener { item ->
+        bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_home -> {
-                    startActivity(Intent(this, MenuPrincipalActivity::class.java))
-                    true
-                }
-                R.id.nav_dieta -> {
-                    startActivity(Intent(this, DietaSaludableActivity::class.java))
-                    true
-                }
-                R.id.nav_ejercitar -> {
-                    startActivity(Intent(this, EntrenamientoActivity::class.java))
-                    true
-                }
-                R.id.nav_profile -> true
-                else -> false
+                R.id.nav_home      -> startActivity(Intent(this, MenuPrincipalActivity::class.java))
+                R.id.nav_dieta     -> startActivity(Intent(this, DietaSaludableActivity::class.java))
+                R.id.nav_ejercitar -> startActivity(Intent(this, EntrenamientoActivity::class.java))
+                R.id.nav_profile   -> { /*queda aquí*/ }
+                else               -> return@setOnItemSelectedListener false
             }
+            true
         }
     }
 }

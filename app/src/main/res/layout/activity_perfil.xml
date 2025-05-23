@@ -4,11 +4,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    >
+    android:background="#FFFFFF" >
 
     <!-- Encabezado -->
     <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mi Perfil"
@@ -19,12 +19,14 @@
 
     <!-- Contenedor de contenido -->
     <ScrollView
+        android:id="@+id/scrollMain"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:fillViewport="true">
 
         <LinearLayout
+            android:id="@+id/llContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -32,6 +34,7 @@
 
             <!-- Información básica -->
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBasicInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -48,46 +51,225 @@
                         android:id="@+id/tvAgeInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Edad: -- años"
-                        android:textSize="16sp" />
+                        android:text="Edad: -- años" />
 
                     <TextView
                         android:id="@+id/tvWeightInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Peso corporal: -- kg"
-                        android:textSize="16sp"
-                        android:layout_marginTop="8dp" />
+                        android:text="Peso corporal: -- kg" />
 
                     <TextView
                         android:id="@+id/tvHeightInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Estatura: -- cm"
-                        android:textSize="16sp"
-                        android:layout_marginTop="8dp" />
+                        android:text="Estatura: -- cm" />
 
                     <TextView
                         android:id="@+id/tvLevelInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nivel actividad: --"
-                        android:textSize="16sp"
-                        android:layout_marginTop="8dp" />
+                        android:text="Nivel actividad: --" />
 
                     <TextView
                         android:id="@+id/tvObjectiveInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Objetivo fitness: --"
-                        android:textSize="16sp"
-                        android:layout_marginTop="8dp" />
+                        android:text="Objetivo fitness: --" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Metas -->
+            <TextView
+                android:id="@+id/tvGoalsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Metas"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginBottom="8dp" />
+
+            <HorizontalScrollView
+                android:id="@+id/scrollGoals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:id="@+id/llGoals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Yoga -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardYoga"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivYoga"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/categorias_yoga"
+                                android:background="@drawable/circle_mask"
+                                android:scaleType="centerCrop"
+                                android:clipToOutline="true"/>
+
+                            <TextView
+                                android:id="@+id/tvYoga"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Yoga"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Gym -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardGym"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivGym"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/categorias_gym"
+                                android:background="@drawable/circle_mask"
+                                android:scaleType="centerCrop"
+                                android:clipToOutline="true"/>
+                            <TextView
+                                android:id="@+id/tvGym"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Gym"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Cardio -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCardio"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivCardio"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/categorias_cardio"
+                                android:background="@drawable/circle_mask"
+                                android:scaleType="centerCrop"
+                                android:clipToOutline="true"/>
+                            <TextView
+                                android:id="@+id/tvCardio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cardio"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Estirar -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardStretch"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivStretch"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/categorias_estirar"
+                                android:background="@drawable/circle_mask"
+                                android:scaleType="centerCrop"
+                                android:clipToOutline="true"/>
+                            <TextView
+                                android:id="@+id/tvStretch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Estirar"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Full Body -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardFullBody"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivFullBody"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@null"
+                                android:background="@drawable/circle_mask"
+                                android:scaleType="centerCrop"
+                                android:clipToOutline="true"/>
+                            <TextView
+                                android:id="@+id/tvFullBody"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Full Body"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
             <!-- Metabolismo -->
             <TextView
+                android:id="@+id/tvMetabolismTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Metabolismo"
@@ -95,55 +277,81 @@
                 android:textSize="20sp"
                 android:layout_marginBottom="8dp" />
 
-            <com.google.android.material.card.MaterialCardView
+            <HorizontalScrollView
+                android:id="@+id/scrollMetabolism"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="16dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:id="@+id/llMetabolism"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tvBmr"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="BMR: -- kcal"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(Energía en reposo)"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBmr"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivBmr"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@null"/>
+                            <TextView
+                                android:id="@+id/tvBmr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BMR: -- kcal"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/tvTdee"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TDEE: -- kcal"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="12dp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(Mantenimiento actividad)"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardTdee"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivTdee"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@null"/>
+                            <TextView
+                                android:id="@+id/tvTdee"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="TDEE: -- kcal"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </HorizontalScrollView>
 
             <!-- Composición Corporal -->
             <TextView
+                android:id="@+id/tvBodyCompTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Composición Corporal"
@@ -151,88 +359,146 @@
                 android:textSize="20sp"
                 android:layout_marginBottom="8dp" />
 
-            <com.google.android.material.card.MaterialCardView
+            <HorizontalScrollView
+                android:id="@+id/scrollBodyComp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
-
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="16dp">
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:id="@+id/llBodyComp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tvBmi"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="IMC: --"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:id="@+id/tvBmiCat"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(Clasificación: --)"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
+                    <!-- IMC -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBmi"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivBmi"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@null"/>
+                            <TextView
+                                android:id="@+id/tvBmi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="IMC: --"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                            <TextView
+                                android:id="@+id/tvBmiCat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="(Clasificación: --)"
+                                android:textSize="10sp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/tvBodyFat"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="% Grasa: -- %"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="12dp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(Fórmula Deurenberg)"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
+                    <!-- % Grasa -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBodyFat"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivBodyFat"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@null"/>
+                            <TextView
+                                android:id="@+id/tvBodyFat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="% Grasa: -- %"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/tvLeanMass"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Masa Magra: -- kg"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="12dp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(Peso sin grasa)"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
+                    <!-- Masa Magra -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardLeanMass"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivLeanMass"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@null"/>
+                            <TextView
+                                android:id="@+id/tvLeanMass"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Masa Magra: -- kg"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/tvWater"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Agua: -- L"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="12dp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(≈60% peso)"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
+                    <!-- Agua -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardWater"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivWater"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@null"/>
+                            <TextView
+                                android:id="@+id/tvWater"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Agua: -- L"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </HorizontalScrollView>
 
             <!-- Macronutrientes -->
             <TextView
+                android:id="@+id/tvMacroTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Macronutrientes"
@@ -240,71 +506,121 @@
                 android:textSize="20sp"
                 android:layout_marginBottom="8dp" />
 
-            <com.google.android.material.card.MaterialCardView
+            <HorizontalScrollView
+                android:id="@+id/scrollMacro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="16dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:id="@+id/llMacro"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tvProteinReq"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Proteínas: -- g/día"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(2 g/kg peso)"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
+                    <!-- Proteína -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardProtein"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivProtein"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/objetivosmacro_proteina"
+                                android:background="@drawable/circle_mask"
+                                android:scaleType="centerCrop"
+                                android:clipToOutline="true"/>
+                            <TextView
+                                android:id="@+id/tvProteinReq"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="130g"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/tvFatReq"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Grasas: -- g/día"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="12dp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(25% calorías)"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
+                    <!-- Carbs -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardCarbs"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivCarbs"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/objetivosmacro_carbos"
+                                android:background="@drawable/circle_mask"
+                                android:scaleType="centerCrop"
+                                android:clipToOutline="true"/>
+                            <TextView
+                                android:id="@+id/tvCarbsReq"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="235g"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/tvCarbsReq"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Carbohidratos: -- g/día"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="12dp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(Resto calorías)"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
+                    <!-- Grasas -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardFat"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivFat"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/objetivosmacro_grasas"
+                                android:background="@drawable/circle_mask"
+                                android:scaleType="centerCrop"
+                                android:clipToOutline="true"/>
+                            <TextView
+                                android:id="@+id/tvFatReq"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="60g"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </HorizontalScrollView>
 
             <!-- Cálculos Avanzados -->
             <TextView
+                android:id="@+id/tvAdvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cálculos Avanzados"
@@ -312,84 +628,137 @@
                 android:textSize="20sp"
                 android:layout_marginBottom="8dp" />
 
-            <com.google.android.material.card.MaterialCardView
+            <HorizontalScrollView
+                android:id="@+id/scrollAdv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="16dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:id="@+id/llAdv"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tvIdealWeight"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Peso Ideal: -- kg"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(fórmula Devine)"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
+                    <!-- Peso Ideal -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardIdealWeight"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivIdealWeight"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@null"/>
+                            <TextView
+                                android:id="@+id/tvIdealWeight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Peso Ideal: -- kg"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/tvBsa"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="BSA: -- m²"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="12dp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(Mosteller)"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
+                    <!-- BSA -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardBsa"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivBsa"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@null"/>
+                            <TextView
+                                android:id="@+id/tvBsa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BSA: -- m²"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/tvHrMax"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="HR Máx: -- lpm"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="12dp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(220 – edad)"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
+                    <!-- HR Máx -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardHrMax"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivHrMax"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@null"/>
+                            <TextView
+                                android:id="@+id/tvHrMax"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="HR Máx: -- lpm"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/tvHrZone"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Zonas: --"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="12dp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="(50–60%,60–70%,70–80%,80–90%)"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        android:layout_marginTop="4dp" />
+                    <!-- Zonas -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardHrZone"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="8dp">
+                            <ImageView
+                                android:id="@+id/ivHrZone"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@null"/>
+                            <TextView
+                                android:id="@+id/tvHrZone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Zonas: --"
+                                android:textSize="12sp"
+                                android:layout_marginTop="6dp"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </HorizontalScrollView>
 
         </LinearLayout>
     </ScrollView>
