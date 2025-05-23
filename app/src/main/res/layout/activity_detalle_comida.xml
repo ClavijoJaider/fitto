@@ -111,7 +111,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour."
+                android:text="Una comida vegetariana saludable y equilibrada está compuesta por alimentos de origen vegetal que aportan todos los nutrientes esenciales que el cuerpo necesita."
                 android:textSize="14sp"
                 android:layout_marginTop="8dp"
                 android:textColor="#555555"/>
