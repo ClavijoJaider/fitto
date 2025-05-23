@@ -68,34 +68,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- 1: Pérdida de peso -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnObjective1"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pérdida de peso"
+            android:layout_height="48dp"
+            android:text="PÉRDIDA DE PESO"
             android:textAllCaps="false"
             android:textSize="16sp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_marginBottom="12dp" />
+            android:textColor="#000000"
+            app:cornerRadius="4dp"
+            android:layout_marginBottom="12dp"/>
 
+        <!-- 2: Ganar músculo -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnObjective2"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ganar músculo"
+            android:layout_height="48dp"
+            android:text="GANAR MÚSCULO"
             android:textAllCaps="false"
             android:textSize="16sp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_marginBottom="12dp" />
+            android:textColor="#000000"
+            app:cornerRadius="4dp"
+            android:layout_marginBottom="12dp"/>
 
+        <!-- 3: Mejorar condición física -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnObjective3"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mejorar condición física"
+            android:layout_height="48dp"
+            android:text="MEJORAR CONDICIÓN FÍSICA"
             android:textAllCaps="false"
             android:textSize="16sp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+            android:textColor="#000000"
+            app:cornerRadius="4dp"/>
+
     </LinearLayout>
 
     <!-- Botón Finalizar -->
@@ -107,10 +117,10 @@
         android:text="PASOS FINALIZADOS"
         android:textAllCaps="false"
         android:textSize="16sp"
-        app:cornerRadius="28dp"
         android:backgroundTint="#2196F3"
-        android:elevation="4dp"
         android:textColor="#FFFFFF"
+        app:cornerRadius="28dp"
+        android:elevation="4dp"
         app:layout_constraintTop_toBottomOf="@id/objectiveOptions"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
